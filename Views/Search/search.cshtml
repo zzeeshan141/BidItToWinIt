@@ -1,0 +1,93 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+@section bootstrapJS{
+    <script src="~/Scripts/bootstrap.js"></script>
+    
+    }
+@section bootstrapCSS{
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+}
+
+
+<div class="wrapper col2">
+  <div id="header">
+    <div class="fl_left">
+      <h1><a href="#">BidItToWinIt</a></h1>
+      <p>Ancient Artifact Bidding Plateform</p>
+    </div>
+    <ul id="topnav">
+      <li><a href="~/AboutUs/aboutus">About Us</a></li>
+      <li><a href="/Search/search">Search</a></li>
+      <li><a href="/ContactUs/contactus">Contact Us</a></li>
+      <li><a href="/PostAdd/postadd">Post Your Add</a></li>
+      <li class="active"><a href="/Home/member">Home</a></li>
+    </ul>
+    <br class="clear" />
+  </div>
+</div>
+
+<div class="wrapper col3">
+    <br /><br /><br />
+  <form class="navbar-form" action="/Home/search" method="post">
+       <label style="padding-left:2em;width:200px;height:40px;font-size:30px">Search: </label> <input type="text" id="searchquery" style="width:400px;height:40px" placeholder="Search"/><input type="button" id="b2" class="btn btn-submit" style="width:70px;height:30px" Value="Go"/>
+      </form>
+    <br /><br /><br />
+</div>
+<div class="wrapper col4">
+  <div id="container">
+    <div id="services">
+        <div id="result" style="padding-left:15em"></div>
+      <ul id="lst">
+
+
+          @Scripts.Render("~/bundles/jquery")
+          <script>
+              $(document).ready(function () {
+                  $('#checking').hide();
+                  $('#b2').click(function () {
+                      var ItemName = $('#searchquery').val();
+                      $('#checking').show();
+                      $.getJSON("/Search/SearchForItem?ItemName=" + ItemName, function (data) {
+                          
+                          if (data != null) {
+                              $('#lst').append("<li><h2>" + data.prodname + "</h2><div class=\"imgholder\"><img src=\"" + data.imgpath + "\" width=\"240\" height=\"90\" alt=\"\" /></div><p>" + data.prod_description + "</p><p class=\"more\"><a href=\"/Home/detail/" + data.Id + "\">More Details &raquo;</a></p></li>");
+                          }
+                          else {
+                              $('#result').text("No Record Found");
+                          }
+                      });
+                  });
+              });
+          </script>
+          
+      </ul>
+	  <br class="clear" />
+      <br class="clear" />
+	  <br class="clear" />
+      
+      <br class="clear" />
+    </div>
+	
+    <div id="content">
+      <h2>About This Free CSS Template</h2>
+      <p>This is a W3C standards compliant free website template from <a href="http://www.os-templates.com/">OS Templates</a>.</p>
+      <p>This template is distributed using a <a href="http://www.os-templates.com/template-terms">Website Template Licence</a>, which allows you to use and modify the template for both personal and commercial use when you keep the provided credit links in the footer.</p>
+      <p>For more CSS templates visit <a href="http://www.os-templates.com/">Free Website Templates</a>.</p>
+      <p>Lacusenim inte trices lorem anterdum nam sente vivamus quis fauctor mauris. Wisinon vivamus wisis adipis laorem lobortis curabiturpiscingilla dui platea ipsum lacingilla.</p>
+    </div>
+    <div id="column">
+      <div class="subnav">
+        <ul>
+          <li><a href="#">Open Source Templates</a></li>
+          <li><a href="#">Free CSS Templates</a></li>
+          <li><a href="#">Open Source Layouts</a></li>
+          <li><a href="#">Open Source Themes</a></li>
+          <li><a href="#">Open Source Downloads</a></li>
+          <li><a href="#">Open Source Website</a></li>
+        </ul>
+      </div>
+    </div>
+    <br class="clear" />
+  </div>
+</div>

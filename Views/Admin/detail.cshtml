@@ -1,0 +1,40 @@
+@model BidItToWinIt01.Models.prodinfo
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+
+
+<div class="wrapper col2">
+  <div id="header">
+    <div class="fl_left">
+      <h1><a href="#">BidItToWinIt</a></h1>
+      <p>Ancient Artifact Bidding Plateform</p>
+    </div>
+    <ul id="topnav">
+      <li><a href="#">About Us</a></li>
+      <li><a href="/Admin/edituser">Edit Users</a></li>
+      <li><a href="/Admin/deleteadd">Delete Ads</a></li>
+      <li><a href="/Admin/requestadd">Ad Requests</a></li>
+      <li class="active"><a href="/Admin/adminhome">Home</a></li>
+    </ul>
+    <br class="clear" />
+  </div>
+</div>
+
+
+
+<div class="wrapper col4">
+	<div id="intro">
+        <p class="imgholder"><img src="@Model.imgpath" alt=""  width="250" height="150" /></p>
+        <h2>@Model.prodname</h2>
+        <p><h1>Details: </h1>@Model.prod_description</p>
+        <p><h1>Owner: </h1>@ViewBag.x.owner</p>
+        <p><h1>TimeRemaining: </h1> @ViewBag.x.min   minutes</p>
+		<p><h1>Current Price: </h1> @Model.prodprice $</p>
+        <p class="readmore"><a href="/Adimin/raise/@Model.Id">Raise 25% &raquo;</a></p>
+		
+		
+	</div>
+	  
+	  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    </div>

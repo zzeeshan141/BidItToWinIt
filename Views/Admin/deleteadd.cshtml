@@ -1,0 +1,138 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+
+
+
+
+<div class="wrapper col2">
+  <div id="header">
+    <div class="fl_left">
+      <h1><a href="#">BidItToWinIt</a></h1>
+      <p>Ancient Artifact Bidding Plateform</p>
+    </div>
+    <ul id="topnav">
+      <li><a href="#">About Us</a></li>
+      <li><a href="/Admin/edituser">Edit Users</a></li>
+      <li class="active"><a href="/Admin/deleteadd">Delete Ads</a></li>
+      <li><a href="/Admin/requestadd">Ad Requests</a></li>
+      <li ><a href="/Admin/adminhome">Home</a></li>
+    </ul>
+    <br class="clear" />
+  </div>
+</div>
+
+
+
+
+
+
+<div class="wrapper col3">
+
+  <div id="intro">
+    <ul>
+      <li>
+        <p class="imgholder"><img src="~/images/avion.jpg" alt=""  width="215" height="125" /></p>
+        <h2>Avion</h2>
+        <p>Nullamlacus dui ipsum conseqlo bo rttis non euisque morbipen asda pibulum orna.</p>
+        <p class="readmore"><a href="~/ProductDEtails/detail">More Details &raquo;</a></p>
+      </li>
+      <li>
+        <p class="imgholder"><img src="~/images/lostship.jpg" alt=""  width="215" height="125"  /></p>
+        <h2>LostShip</h2>
+        <p>Nullamlacus dui ipsum conseqlo bo rttis non euisque morbipen asda pibulum orna.</p>
+        <p class="readmore"><a href="#">More Details &raquo;</a></p>
+      </li>
+      <li>
+        <p class="imgholder"><img src="~/images/ooparts.jpg" alt=""   width="215" height="125" /></p>
+        <h2>ooparts</h2>
+        <p>Nullamlacus dui ipsum conseqlo bo rttis non euisque morbipen asda pibulum orna.</p>
+        <p class="readmore"><a href="#">More Details &raquo;</a></p>
+      </li>
+      <li class="last">
+        <p class="imgholder"><img src="~/images/rings.jpg" alt=""   width="215" height="125" /></p>
+        <h2>rings</h2>
+        <p>Nullamlacus dui ipsum conseqlo bo rttis non euisque morbipen asda pibulum orna.</p>
+        <p class="readmore"><a href="#">More Details &raquo;</a></p>
+      </li>
+    </ul>
+    <br class="clear" />
+  </div>
+</div>
+<div class="wrapper col4">
+  <div id="container">
+    <div id="services">
+      <ul>
+
+          
+          
+            @{int i=0;
+              foreach (var b in Model){
+                  if(! ( i%3 == 0 )){
+                    <li>
+                    <h2>@b.prodname</h2>
+                    <div class="imgholder"><img src="@b.imgpath" width="240" height="90" alt="" /></div>
+                    <p>@b.prod_description</p>
+                    <p class="more"><a href="/Admin/deleteaddbyid/@b.Id">Delete &raquo;</a></p>
+                    </li>
+
+                      
+                  }
+                  else{
+                    <li class="last">
+                    <h2>@b.prodname</h2>
+                    <div class="imgholder"><img src="@b.imgpath" width="240" height="90" alt="" /></div>
+                    <p>@b.prod_description</p>
+                    <p class="more"><a href="/Admin/deleteaddbyid/@b.Id">Delete &raquo;</a></p>
+                    </li>
+
+                      
+                  }
+                
+            
+                  i = i + 1;
+                }
+              
+            }
+              
+            
+              
+            
+            
+      </ul>
+	  <br class="clear" />
+      <br class="clear" />
+	  <br class="clear" />
+      <div>
+		
+			<a style="padding-left:38em">1<a/>
+			|<a>2<a/>
+			|<a style="padding-right:38em">3<a/>
+		
+	
+	</div>
+      <br class="clear" />
+    </div>
+	
+    <div id="content" style="color:black">
+      <h2>About This Organization</h2>
+      <p>A sad thing in life is when you meet someone who means a lot to you, only to find out in the end that it was never meant to be and you just have to let go.</p>
+      <p>A sad thing in life is when you meet someone who means a lot to you, only to find out in the end that it was never meant to be and you just have to let go.</p>
+      <p>A sad thing in life is when you meet someone who means a lot to you, only to find out in the end that it was never meant to be and you just have to let go.</p>
+      <p>A sad thing in life is when you meet someone who means a lot to you, only to find out in the end that it was never meant to be and you just have to let go.</p>
+    </div>
+    <div id="column">
+      <div class="subnav">
+        <ul>
+          <li><a href="#">Open Source Templates</a></li>
+          <li><a href="#">Free CSS Templates</a></li>
+          <li><a href="#">Open Source Layouts</a></li>
+          <li><a href="#">Open Source Themes</a></li>
+          <li><a href="#">Open Source Downloads</a></li>
+          <li><a href="#">Open Source Website</a></li>
+        </ul>
+      </div>
+    </div>
+    <br class="clear" />
+  </div>
+</div>

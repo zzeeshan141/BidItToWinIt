@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+Template Name: AquaBusiness
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>BitItToWinIt</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link rel="stylesheet" href="~/content/layout.css" type="text/css" />
+    @RenderSection("bootstrapJS" , required:false)
+    @RenderSection("bootstrapCSS" , required:false)
+	
+</head>
+<body id="top">
+<div class="wrapper col1">
+  <div id="topbar">
+    <div id="social">
+      <ul>
+        <li><a href="#"><img src="~/images/rss.jpg" width="25" height="25" alt="" /></a></li>
+        <li><a href="#"><img src="~/images/facebook.jpg" width="25" height="25" alt="Add to: Facebook" /></a></li>
+        <li><a href="#"><img src="~/images/delicious.jpg" width="25" height="25" alt="Del.icio.us" /></a></li>
+        <li><a href="#"><img src="~/images/stumbleupon.jpg" width="25" height="25" alt="Stumbleupon" /></a></li>
+        <li><a href="#"><img src="~/images/reddit.jpg" width="25" height="25" alt="reddit" /></a></li>
+        <li><a href="#"><img src="~/images/digg.jpg" width="25" height="25" alt="Digg" /></a></li>
+        <li><a href="#"><img src="~/images/yahoo.jpg" width="25" height="25" alt="Y! MyWeb" /></a></li>
+        <li class="last"><a href="#"><img src="~/images/google.jpg" width="25" height="25" alt="Google" /></a></li>
+      </ul>
+    </div>
+    <div id="search">
+      <form action="#" method="post">
+        <fieldset>
+            <label id="uanme"></label>
+			<a href="~/SignUp/signup" id="signup" style="color:white">SignUp</a>
+		  | <a href="~/Login/login" id="login"style="color:white">Login</a>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+    @RenderBody()
+
+<div class="wrapper col5">
+  <div id="footer">
+    <div class="footbox">
+      <h2>Stay In The Know !</h2>
+      <p>Please enter your email to join our mailing list</p>
+      <form action="#" method="post">
+        <fieldset>
+          <legend>News Letter</legend>
+          <input type="text" value="Enter Email Here&hellip;"  onfocus="this.value=(this.value=='Enter Email Here&hellip;')? '' : this.value ;" />
+          <input type="submit" name="news_go" id="news_go" value="GO" />
+        </fieldset>
+      </form>
+      <p>To unsubscribe please <a href="#">click here &raquo;</a></p>
+    </div>
+    <div class="footbox">
+      <h2>Further Information !</h2>
+      <ul>
+        <li><a href="#">Business Terms &amp; Conditions &raquo;</a></li>
+        <li><a href="#">Disability Philosophy &raquo;</a></li>
+        <li class="last"><a href="#">Contact Our Company &raquo;</a></li>
+      </ul>
+    </div>
+    <div class="footbox last">
+      <h2>Company Details !</h2>
+      <address>
+      Company Name<br />
+      Street Name &amp; Number<br />
+      Town<br />
+      Postcode/Zip<br />
+      </address>
+      Tel: xxxxx xxxxxxxxxx 
+      <!-- --> 
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<div class="wrapper col6">
+  <div id="copyright">
+    <p class="fl_left">Copyright &copy; 2014 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <br class="clear" />
+  </div>
+</div>
+</body>
+</html>

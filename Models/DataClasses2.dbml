@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Database1" Class="DataClasses2DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Database1ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.prodinfo" Member="prodinfos">
+    <Type Name="prodinfo">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="prodname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="prodprice" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="imgpath" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="date" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="prod_description" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="end_date" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Association Name="prodinfo_user_prod" Member="user_prods" ThisKey="Id" OtherKey="pid" Type="user_prod" />
+    </Type>
+  </Table>
+  <Table Name="dbo.user_prod" Member="user_prods">
+    <Type Name="user_prod">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="uid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="prodinfo_user_prod" Member="prodinfo" ThisKey="pid" OtherKey="Id" Type="prodinfo" IsForeignKey="true" />
+      <Association Name="userinfo_user_prod" Member="userinfo" ThisKey="uid" OtherKey="Id" Type="userinfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.userinfo" Member="userinfos">
+    <Type Name="userinfo">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="userinfo_user_prod" Member="user_prods" ThisKey="Id" OtherKey="uid" Type="user_prod" />
+    </Type>
+  </Table>
+  <Table Name="dbo.admininfo" Member="admininfos">
+    <Type Name="admininfo">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.requests" Member="requests">
+    <Type Name="request">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="prodname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="prodprice" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="imgpath" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="date" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="prod_description" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="end_date" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="uid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
