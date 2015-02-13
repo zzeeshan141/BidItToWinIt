@@ -1,0 +1,49 @@
+@model BidItToWinIt01.Models.userinfo
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+@section bootstrapJS{
+    <script src="~/Scripts/bootstrap.js"></script>
+    
+    }
+@section bootstrapCSS{
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+}
+
+<div class="wrapper col2">
+  <div id="header">
+    <div class="fl_left">
+      <h1><a href="#">BidItToWinIt</a></h1>
+      <p>Ancient Artifact Bidding Plateform</p>
+    </div>
+    <ul id="topnav">
+      <li ><a href="~/AboutUs/aboutus">About Us</a></li>
+      <li><a href="/Search/search">Search</a></li>
+      <li class="active"><a href="/ContactUs/contactus">Contact Us</a></li>
+      <li><a href="/PostAdd/postadd">Post Your Add</a></li>
+      <li ><a href="/Home/member">Home</a></li>
+    </ul>
+    <br class="clear" />
+  </div>
+</div>
+
+<div class="wrapper col4">
+<br/><br/><br/><br/>
+        
+    
+    @Html.Label("FirstName", "CEO: ", new {style="padding-left:20em;color:blue" })
+    <br />
+    @Html.Label("FirstName1", "Zeeshan Ali Ashfaq", new {style="padding-left:20em" })
+    <br />
+    @Html.ActionLink("zzeeshan141@gmail.com", "#", new {style="padding-left:20em" })
+    <br />
+    @Html.Label("FirstName2", "St#5 Lahore, Pakistan", new {style="padding-left:20em" })
+    <br />
+    @Html.Label("FirstName3", "Phone: +923xxxxxx40", new {style="padding-left:20em" })
+    <br />
+    @Html.Label("FirstName4", "P.O.Box: abc", new {style="padding-left:20em" })
+
+	
+		<br/><br/><br/><br/>
+</div>

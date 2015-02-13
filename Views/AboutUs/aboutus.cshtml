@@ -1,0 +1,51 @@
+@model BidItToWinIt01.Models.userinfo
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+@section bootstrapJS{
+    <script src="~/Scripts/bootstrap.js"></script>
+    
+    }
+@section bootstrapCSS{
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+}
+
+<div class="wrapper col2">
+  <div id="header">
+    <div class="fl_left">
+      <h1><a href="#">BidItToWinIt</a></h1>
+      <p>Ancient Artifact Bidding Plateform</p>
+    </div>
+    <ul id="topnav">
+      <li class="active"><a href="~/AboutUs/aboutus">About Us</a></li>
+      <li><a href="/Search/search">Search</a></li>
+      <li><a href="/ContactUs/contactus">Contact Us</a></li>
+      <li><a href="/PostAdd/postadd">Post Your Add</a></li>
+      <li ><a href="/Home/member">Home</a></li>
+    </ul>
+    <br class="clear" />
+  </div>
+</div>
+
+<div class="wrapper col4">
+<br/><br/><br/><br/>
+    
+    
+    @*Html.BeginForm("aboutus","AboutUs",FormMethod.Post){*@
+    @Html.Label("Send US Your Feedback: ", new {style="padding-left:8em;font-size:30px;color:blue" })
+    <br />
+
+    @Html.Label("Your Email", new {style="padding-left:20em" })
+    @Html.TextBoxFor(x=>x.username, new {style="width:300px" })
+    <br />
+    @Html.Label("Feedback", new {style="padding-left:20em" })
+    @Html.TextAreaFor(x=>x.username, new {style="width:300px;height:200px" })
+    <br />
+    
+
+    
+
+	
+		<br/><br/><br/><br/>
+</div>

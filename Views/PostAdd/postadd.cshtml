@@ -1,0 +1,56 @@
+@model BidItToWinIt01.Models.request
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+@section bootstrapJS{
+    <script src="~/Scripts/bootstrap.js"></script>
+    
+    }
+@section bootstrapCSS{
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+}
+
+
+<div class="wrapper col2">
+  <div id="header">
+    <div class="fl_left">
+      <h1><a href="#">BidItToWinIt</a></h1>
+      <p>Ancient Artifact Bidding Plateform</p>
+    </div>
+    <ul id="topnav">
+      <li ><a href="~/AboutUs/aboutus">About Us</a></li>
+      <li><a href="/Search/search">Search</a></li>
+      <li><a href="/ContactUs/contactus">Contact Us</a></li>
+      <li class="active"><a href="/PostAdd/postadd">Post Your Add</a></li>
+      <li ><a href="/Home/member">Home</a></li>
+    </ul>
+    <br class="clear" />
+  </div>
+</div>
+
+<div class="wrapper col4">
+<br/><br/><br/><br/>
+    
+
+	<form class="navbar-form" action="/Home/saveRequest" method="post" enctype="multipart/form-data">
+
+           <label style="width:200px;text-align:right;padding-right:2em">Product Name</label>  <input type ="text" name="prodname" id="TxtName" class="form-control" style="width:300px" placeholder="Full Name"/>
+           
+            <br /> <br /><label style="width:200px;text-align:right;padding-right:2em">Product Price</label>  <input type ="text" name="prodprice" id="TxtPrice" class="form-control" style="width:300px" placeholder="Price"/>
+            <br /> <br /><label style="width:200px;text-align:right;padding-right:2em">Image</label>  <input type ="file" name="imgname" id="TxtImage" class="form-control"/>
+            <br /> <br /><label style="width:200px;text-align:right;padding-right:2em">Auction start date</label>  <input type ="date" name="date" id="TxtStartDate" class="form-control" style="width:250px" placeholder="dd/mm/yyyy"/>
+            <br /> <br /><label style="width:200px;text-align:right;padding-right:2em">Auction end date</label>  <input type ="date" name="end_date" id="TxtEndDate" class="form-control" style="width:250px" placeholder="dd/mm/yyyy"/>
+            
+            
+            <br /> <br /><label style="width:200px;text-align:right;padding-right:2em">Details</label>  <input type ="text" name="prod_description" id="TxtNotes" class="form-control" style="width:300px;height:100px"/>
+           
+            <br /> <br /><br /> <br />
+            <div style="width:400px;padding-left:14em">
+                <button class="btn btn-default" style="">Create Account</button>
+            </div>
+		</form>
+  
+  
+		<br/><br/><br/><br/>
+</div>

@@ -1,0 +1,43 @@
+@model BidItToWinIt01.Models.userinfo
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+@section bootstrapJS{
+    <script src="~/Scripts/bootstrap.js"></script>
+    
+    }
+@section bootstrapCSS{
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+}
+
+<div class="wrapper col2">
+  <div id="header">
+    <div class="fl_left">
+      <h1><a href="#">BidItToWinIt</a></h1>
+      <p>Ancient Artifact Bidding Plateform</p>
+    </div>
+    
+    <br class="clear" />
+  </div>
+</div>
+
+<div class="wrapper col4">
+<br/><br/><br/><br/>
+    
+    <h1 style="padding-left:7em;color:blue">Login Your Account: </h1>
+	<form class="navbar-form" action="/Home/verifylogin" method="post">
+           <label style="width:200px;text-align:right;padding-right:2em">Email</label>  <input type ="email" name="username" id="TxtName" class="form-control" style="width:300px" placeholder="UserId"/>
+           <br /> <br /><label style="width:200px;text-align:right;padding-right:2em">Password</label>  <input type ="password" name="password" id="TxtPassword" class="form-control" style="width:300px" placeholder="Password"/>
+			<br/><br/>
+			<div style="width:400px;padding-left:14em">
+                <button id="loginbtn" class="btn btn-default" >Login</button>
+            </div>
+
+
+        
+		</form>
+  
+  
+		<br/><br/><br/><br/>
+</div>
