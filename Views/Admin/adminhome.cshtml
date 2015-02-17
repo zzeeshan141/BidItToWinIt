@@ -66,17 +66,15 @@
 
           
           
-            @{int i=0;
+            @{int i=1;
               foreach (var b in Model){
-                  if(! ( i%3 == 0 )){
+                  if(! ( i%3 != 0 )){
                     <li>
                     <h2>@b.prodname</h2>
                     <div class="imgholder"><img src="@b.imgpath" width="240" height="90" alt="" /></div>
                     <p>@b.prod_description</p>
                     <p class="more"><a href="/Admin/detail/@b.Id">More Detail &raquo;</a></p>
                     </li>
-
-                      
                   }
                   else{
                     <li class="last">
@@ -84,13 +82,10 @@
                     <div class="imgholder"><img src="@b.imgpath" width="240" height="90" alt="" /></div>
                     <p>@b.prod_description</p>
                     <p class="more"><a href="/Admin/detail/@b.Id">More Drtail &raquo;</a></p>
-                    </li>
-
-                      
+                    </li>  
                   }
-                
-            
                   i = i + 1;
+                  
                 }
               
             }

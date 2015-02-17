@@ -9,16 +9,6 @@
       <Column Name="date" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
       <Column Name="prod_description" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
       <Column Name="end_date" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
-      <Association Name="prodinfo_user_prod" Member="user_prods" ThisKey="Id" OtherKey="pid" Type="user_prod" />
-    </Type>
-  </Table>
-  <Table Name="dbo.user_prod" Member="user_prods">
-    <Type Name="user_prod">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="uid" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="pid" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="prodinfo_user_prod" Member="prodinfo" ThisKey="pid" OtherKey="Id" Type="prodinfo" IsForeignKey="true" />
-      <Association Name="userinfo_user_prod" Member="userinfo" ThisKey="uid" OtherKey="Id" Type="userinfo" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.userinfo" Member="userinfos">
@@ -26,7 +16,6 @@
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="userinfo_user_prod" Member="user_prods" ThisKey="Id" OtherKey="uid" Type="user_prod" />
     </Type>
   </Table>
   <Table Name="dbo.admininfo" Member="admininfos">
@@ -46,6 +35,13 @@
       <Column Name="prod_description" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="end_date" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
       <Column Name="uid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.user_prod" Member="user_prods">
+    <Type Name="user_prod">
+      <Column Name="upId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="uid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
