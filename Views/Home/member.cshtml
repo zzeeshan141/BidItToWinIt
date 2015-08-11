@@ -26,28 +26,28 @@
   <div id="intro">
     <ul>
       <li>
-        <p class="imgholder"><a href="~/ProductDEtails/detail"><img src="~/images/avion.jpg" alt=""  width="215" height="125" /></a></p>
+        <p class="imgholder"><img src="~/images/avion.jpg" alt=""  width="215" height="125" /></p>
         <h2>Avion</h2>
         <p>Nullamlacus dui ipsum conseqlo bo rttis non euisque morbipen asda pibulum orna.</p>
-        <p class="readmore"><a href="~/ProductDEtails/detail">More Details &raquo;</a></p>
+        <p class="readmore">More Details &raquo;</p>
       </li>
       <li>
-        <p class="imgholder"><a href="~/ProductDEtails/detail"><img src="~/images/lostship.jpg" alt=""  width="215" height="125"  /></a></p>
+        <p class="imgholder"><a href="/Home/detail/1"><img src="~/images/lostship.jpg" alt=""  width="215" height="125"  /></a></p>
         <h2>LostShip</h2>
         <p>Nullamlacus dui ipsum conseqlo bo rttis non euisque morbipen asda pibulum orna.</p>
-        <p class="readmore"><a href="#">More Details &raquo;</a></p>
+        <p class="readmore"><a href="/Home/detail/1">More Details &raquo;</a></p>
       </li>
       <li>
-        <p class="imgholder"><a href="~/ProductDEtails/detail"><img src="~/images/ooparts.jpg" alt=""   width="215" height="125" /></a></p>
+        <p class="imgholder"><a href="/Home/detail/2"><img src="~/images/ooparts.jpg" alt=""   width="215" height="125" /></a></p>
         <h2>ooparts</h2>
         <p>Nullamlacus dui ipsum conseqlo bo rttis non euisque morbipen asda pibulum orna.</p>
-        <p class="readmore"><a href="#">More Details &raquo;</a></p>
+        <p class="readmore"><a href="/Home/detail/2">More Details &raquo;</a></p>
       </li>
       <li class="last">
-        <p class="imgholder"><a href="~/ProductDEtails/detail"><img src="~/images/rings.jpg" alt=""   width="215" height="125" /></a></p>
+        <p class="imgholder"><a href="/Home/detail/3"><img src="~/images/rings.jpg" alt=""   width="215" height="125" /></a></p>
         <h2>rings</h2>
         <p>Nullamlacus dui ipsum conseqlo bo rttis non euisque morbipen asda pibulum orna.</p>
-        <p class="readmore"><a href="#">More Details &raquo;</a></p>
+        <p class="readmore"><a href="/Home/detail/3">More Details &raquo;</a></p>
       </li>
     </ul>
     <br class="clear" />
@@ -65,7 +65,7 @@
                   if(! ( i%3 == 0 )){
                     <li>
                     <h2>@b.prodname</h2>
-                    <div class="imgholder"><img src="@b.imgpath" width="240" height="90" alt="" /></div>
+                    <div class="imgholder"><a href="/Home/detail/@b.Id"><img src="@b.imgpath" width="240" height="90" alt="" /></a></div>
                     <p>@b.prod_description</p>
                     <p class="more"><a href="/Home/detail/@b.Id">More Details &raquo;</a></p>
                     </li>
@@ -75,7 +75,7 @@
                   else{
                     <li class="last">
                     <h2>@b.prodname</h2>
-                    <div class="imgholder"><img src="@b.imgpath" width="240" height="90" alt="" /></div>
+                    <div class="imgholder"><a href="/Home/detail/@b.Id"><img src="@b.imgpath" width="240" height="90" alt="" /></a></div>
                     <p>@b.prod_description</p>
                     <p class="more"><a href="/Home/detail/@b.Id">More Details &raquo;</a></p>
                     </li>
